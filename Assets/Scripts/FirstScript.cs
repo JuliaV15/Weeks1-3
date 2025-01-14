@@ -32,6 +32,7 @@ public class FirstScript : MonoBehaviour
         }
 
         transform.position = pos;
+        
 
         
     }
