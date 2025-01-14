@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class codinggym : MonoBehaviour
+public class Animationcurve : MonoBehaviour
 {
+    public AnimationCurve curve;
+
+    [Range(0, 1)]
+    public float t;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +18,13 @@ public class codinggym : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        t += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1")){
-            transform.position = mousePos;
+        if(t > 1)
+        {
+            t = 0;
         }
 
+        transform.localScale = Vector3.one * curve.Evaluate(t);
     }
 }
