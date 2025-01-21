@@ -27,8 +27,14 @@ public class colourchangecodinggym : MonoBehaviour
            // spriteRenderer.color = Color.red;
         }
 
-        
-        
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            transform.position = mousePos;
+            spriteRenderer.color = Random.ColorHSV();
+        }
+
 
     }
 }
