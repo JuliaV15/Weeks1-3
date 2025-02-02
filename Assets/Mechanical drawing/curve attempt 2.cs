@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class animationthing : MonoBehaviour
-{ // ***** code is from animation curve lesson in class *****//
-
+public class curveattempt2 : MonoBehaviour
+{
     public AnimationCurve curve;
+    public Transform start;
+    public Transform end;
 
     [Range(0, 1)]
     public float t;
@@ -26,6 +27,6 @@ public class animationthing : MonoBehaviour
             t = 0;
         }
 
-        transform.localScale = Vector3.one * curve.Evaluate(t);
+        transform.position = Vector3.one * curve.Evaluate(t);
     }
 }
